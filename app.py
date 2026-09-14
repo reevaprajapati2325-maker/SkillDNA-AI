@@ -1407,14 +1407,14 @@ elif st.session_state.page == "Results":
     # ========================================================
 
     with tabs[4]:
-    st.subheader("📝 Review Your Answers")
-    st.write("See what each of your choices indicates about your strengths.")
+       st.subheader("📝 Review Your Answers")
+       st.write("See what each of your choices indicates about your strengths.")
 
-    for i, answer in enumerate(st.session_state.answers):
-        question = st.session_state.questions[i]
+     for i, answer in enumerate(st.session_state.answers):
+         question = st.session_state.questions[i]
 
         # Find the skill connected to the selected answer
-        selected_skill = None
+         selected_skill = None
 
         for option_text, skill in question["options"]:
             if option_text == answer:
