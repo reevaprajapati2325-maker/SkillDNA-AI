@@ -1272,11 +1272,25 @@ elif st.session_state.page == "Results":
 
 
     selected_tab = st.tabs(["Overview", "Careers", "Projects", "Growth", "Review"])
-    with selected_tab[0]:
-    with selected_tab[1]:
-    with selected_tab[2]:
-    with selected_tab[3]:   
-    with selected_tab[4]:
+
+with selected_tab[0]:
+    # ALL of your Overview section code goes here
+    ...
+
+with selected_tab[1]:
+    # ALL of your Careers section code goes here
+    ...
+
+with selected_tab[2]:
+    # ALL of your Projects section code goes here
+    ...
+
+with selected_tab[3]:
+    # ALL of your Growth section code goes here
+    ...
+
+with selected_tab[4]:
+    # ALL of your Review section code goes here
     # ========================================================
     # OVERVIEW
     # ========================================================
