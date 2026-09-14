@@ -740,16 +740,27 @@ QUESTION_BANK = {
 
 st.markdown("""
 <style>
-/* Button text visibility */
+/* DARK BUTTONS — WHITE TEXT */
 .stButton > button {
-    color: #ffffff !important;
+    color: #FFFFFF !important;
     background-color: #333333 !important;
-    border: none !important;
+    border: 1px solid #555555 !important;
+    font-weight: 600 !important;
+}
+
+.stButton > button p,
+.stButton > button span {
+    color: #FFFFFF !important;
 }
 
 .stButton > button:hover {
-    color: #ffffff !important;
-    background-color: #555555 !important;
+    color: #FFFFFF !important;
+    background-color: #444444 !important;
+}
+
+.stButton > button:hover p,
+.stButton > button:hover span {
+    color: #FFFFFF !important;
 }
 body, p, div, span, label, li, td, th {
     color: #222222 !important;
