@@ -740,6 +740,17 @@ QUESTION_BANK = {
 
 st.markdown("""
 <style>
+/* Button text visibility */
+.stButton > button {
+    color: #ffffff !important;
+    background-color: #333333 !important;
+    border: none !important;
+}
+
+.stButton > button:hover {
+    color: #ffffff !important;
+    background-color: #555555 !important;
+}
 body, p, div, span, label, li, td, th {
     color: #222222 !important;
 }
