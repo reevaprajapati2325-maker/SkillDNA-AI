@@ -1267,30 +1267,14 @@ elif st.session_state.page == "Results":
 
     if chart_data:
         st.bar_chart(chart_data)
-
+   top_skills = [
+    (skill, score)
+    for skill, score in ranked
+    if score > 0
+][:5]
     st.markdown("## 🧭 Explore your results")
 
-selected_tab = st.tabs(["Overview", "Careers", "Projects", "Growth", "Review"])
-
-with selected_tab[0]:
-    # ALL of your Overview section code goes here
-    ...
-
-with selected_tab[1]:
-    # ALL of your Careers section code goes here
-    ...
-
-with selected_tab[2]:
-    # ALL of your Projects section code goes here
-    ...
-
-with selected_tab[3]:
-    # ALL of your Growth section code goes here
-    ...
-
-with selected_tab[4]:
-    # ALL of your Review section code goes here
-    # ========================================================
+    selected_tab = st.tabs(["Overview", "Careers", "Projects", "Growth", "Review"])
     # OVERVIEW
     # ========================================================
 
