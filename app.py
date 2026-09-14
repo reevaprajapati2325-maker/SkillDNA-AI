@@ -1273,19 +1273,19 @@ elif st.session_state.page == "Results":
 
     tabs = st.tabs(["Overview", "Careers", "Projects", "Growth", "Review"])
 
-with tabs[0]:
+    with tabs[0]:
     # ALL Overview code is 4 spaces in
 
-with tabs[1]:
+    with tabs[1]:
     # ALL Careers code is 4 spaces in
 
-with tabs[2]:
+    with tabs[2]:
     # ALL Projects code is 4 spaces in
 
-with tabs[3]:
+    with tabs[3]:
     # ALL Growth code is 4 spaces in
 
-with tabs[4]:
+    with tabs[4]:
     # ALL Review code is 4 spaces in
     # Review code
     # ========================================================
