@@ -1274,20 +1274,19 @@ elif st.session_state.page == "Results":
     tabs = st.tabs(["Overview", "Careers", "Projects", "Growth", "Review"])
 
     with tabs[0]:
-    # ALL Overview code is 4 spaces in
+        st.subheader("Overview")
 
     with tabs[1]:
-    # ALL Careers code is 4 spaces in
+        st.subheader("Careers")
 
     with tabs[2]:
-    # ALL Projects code is 4 spaces in
+        st.subheader("Projects")
 
     with tabs[3]:
-    # ALL Growth code is 4 spaces in
+        st.subheader("Growth")
 
     with tabs[4]:
-    # ALL Review code is 4 spaces in
-    # Review code
+        st.subheader("📝 Review Your Answers")
     # ========================================================
     # OVERVIEW
     # ========================================================
