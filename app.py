@@ -1455,7 +1455,7 @@ elif st.session_state.page == "Results":
                 f"""
                 <div class="question-card">
                     <h4>Question {i + 1}</h4>
-                    <p><b>{html.escape(question["question"])}</b></p> 
+                    <p><b>{html.escape(str(question.get("question", question.get("text", "Question"))))}</b></p>
                     <p><b>Your choice:</b> {html.escape(answer)}</p>
                     <p><b>Skill indicated:</b> {html.escape(selected_skill or "Not identified")}</p>
                     <p><b>Why this choice?</b> {html.escape(explanations.get(selected_skill, "This choice contributes to the skill profile shown in your results."))}</p>
