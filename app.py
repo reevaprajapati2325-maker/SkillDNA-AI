@@ -1426,18 +1426,4 @@ elif st.session_state.page == "Results":
                 """,
                 unsafe_allow_html=True
             )
-
-    st.markdown("")
-
-    if st.button(
-        "🔄 Start Again",
-        use_container_width=True
-    ):
-        reset_app()
-        st.rerun()
-
-    st.markdown("""
-    <div class="footer">
-        SkillDNA AI • Designed as a student AI capstone project
-    </div>
-    """, unsafe_allow_html=True)
+    
