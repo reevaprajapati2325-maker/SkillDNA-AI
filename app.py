@@ -1058,17 +1058,16 @@ elif st.session_state.page == "Assessment":
     st.progress(progress)
 
     st.markdown(
-        f"""
-        <div class="question-card">
-            <div class="question-number">
-                QUESTION {current + 1} OF {total}
-            </div>
-            <div class="question-text">
-                {html.escape(question["q"])}
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True
+    f"""
+    <div class="question-card">
+        <h4>Question {i + 1}</h4>
+        <p><b>{html.escape(str(question.get("question", question.get("text", "Question"))))}</b></p>
+        <p><b>Your choice:</b> {html.escape(str(answer))}</p>
+        <p><b>Skill indicated:</b> {html.escape(str(selected_skill or "Not identified"))}</p>
+        <p><b>Why this choice?</b> {html.escape(str(explanations.get(selected_skill, "This choice contributes to the skill profile shown in your results.")))}</p>
+    </div>
+    """,
+    unsafe_allow_html=True
     )
 
     option_texts = [item[0] for item in question["options"]]
