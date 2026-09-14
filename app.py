@@ -1406,24 +1406,60 @@ elif st.session_state.page == "Results":
     # REVIEW
     # ========================================================
 
-    with selected_tab[4]:
+    with tabs[4]:
+    st.subheader("📝 Review Your Answers")
+    st.write("See what each of your choices indicates about your strengths.")
 
-        st.markdown("### 🔎 Review your responses")
+    for i, answer in enumerate(st.session_state.answers):
+        question = st.session_state.questions[i]
 
-        for index, question in enumerate(questions):
+        # Find the skill connected to the selected answer
+        selected_skill = None
 
-            answer = answers.get(index, "Not answered")
+        for option_text, skill in question["options"]:
+            if option_text == answer:
+                selected_skill = skill
+                break
 
+        # Explanation for each skill
+        explanations = {
+            "Logic": "This choice indicates that you prefer using reasoning, patterns, and clear connections to reach a solution.",
+
+            "Creativity": "This choice indicates that you are comfortable thinking of original ideas and exploring different possibilities.",
+
+            "Scientific Thinking": "This choice indicates that you prefer observing evidence, testing ideas, and understanding how things work.",
+
+            "Data Analysis": "This choice indicates that you like finding patterns and making conclusions from information or numbers.",
+
+            "Problem Solving": "This choice indicates that you tend to break challenges into manageable steps and look for practical solutions.",
+
+            "Communication": "This choice indicates that you value explaining ideas clearly and making sure others understand your point.",
+
+            "Leadership": "This choice indicates that you are comfortable taking initiative, coordinating people, and helping a group move forward.",
+
+            "Research": "This choice indicates that you like gathering information and investigating a topic before reaching a conclusion.",
+
+            "Empathy": "This choice indicates that you consider other people's feelings, experiences, and perspectives when making decisions.",
+
+            "Planning": "This choice indicates that you prefer organising tasks, resources, and steps before taking action.",
+
+            "Critical Thinking": "This choice indicates that you prefer checking evidence and evaluating information before accepting a conclusion.",
+
+            "Systems Thinking": "This choice indicates that you notice how different parts of a situation are connected and affect one another.",
+
+            "Decision Making": "This choice indicates that you can compare possibilities and choose an appropriate course of action."
+        }
+
+        with st.container():
             st.markdown(
                 f"""
-                <div class="card">
-                    <strong>Q{index + 1}. {html.escape(question["q"])}</strong>
-                    <p>
-                        <strong>Your response:</strong>
-                        {html.escape(answer)}
-                    </p>
+                <div class="question-card">
+                    <h4>Question {i + 1}</h4>
+                    <p><b>{html.escape(question["question"])}</b></p>
+                    <p><b>Your choice:</b> {html.escape(answer)}</p>
+                    <p><b>Skill indicated:</b> {html.escape(selected_skill or "Not identified")}</p>
+                    <p><b>Why this choice?</b> {html.escape(explanations.get(selected_skill, "This choice contributes to the skill profile shown in your results."))}</p>
                 </div>
                 """,
                 unsafe_allow_html=True
             )
-    
