@@ -740,7 +740,27 @@ QUESTION_BANK = {
 
 st.markdown("""
 <style>
+body, p, div, span, label, li, td, th {
+    color: #222222 !important;
+}
 
+h1, h2, h3, h4, h5, h6 {
+    color: #222222 !important;
+}
+
+.stMarkdown, .stText, .stCaption {
+    color: #222222 !important;
+}
+
+[data-testid="stMarkdownContainer"] {
+    color: #222222 !important;
+}
+
+.stRadio label,
+.stSelectbox label,
+.stTextInput label {
+    color: #222222 !important;
+}
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
 html, body, [class*="css"] {
