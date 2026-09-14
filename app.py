@@ -1270,10 +1270,23 @@ elif st.session_state.page == "Results":
 
     st.markdown("## 🧭 Explore your results")
 
-    selected_tab = st.tabs(
-        ["Overview", "Careers", "Projects", "Growth", "Review"]
-    )
 
+    tabs = st.tabs(["Overview", "Careers", "Projects", "Growth", "Review"])
+
+    with tabs[0]:
+    # Overview code
+
+    with tabs[1]:
+        # Careers code
+
+    with tabs[2]:
+    # Projects code
+
+    with tabs[3]:
+    # Growth code
+
+    with tabs[4]:
+    # Review code
     # ========================================================
     # OVERVIEW
     # ========================================================
