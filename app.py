@@ -1410,7 +1410,8 @@ elif st.session_state.page == "Results":
        st.subheader("📝 Review Your Answers")
        st.write("See what each of your choices indicates about your strengths.")
 
-     for i, answer in enumerate(st.session_state.answers):
+     for i, answer in 
+    enumerate(st.session_state.answers):
          question = st.session_state.questions[i]
 
         # Find the skill connected to the selected answer
