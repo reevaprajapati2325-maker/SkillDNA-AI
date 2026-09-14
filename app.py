@@ -1407,8 +1407,8 @@ elif st.session_state.page == "Results":
     # ========================================================
 
     with tabs[4]:
-    st.subheader("📝 Review Your Answers")
-    st.write("See what each of your choices indicates about your strengths.")
+        st.subheader("📝 Review Your Answers")
+        st.write("See what each of your choices indicates about your strengths.")
 
     # Explanation for each skill
     explanations = {
