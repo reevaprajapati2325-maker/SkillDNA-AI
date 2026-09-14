@@ -1267,7 +1267,7 @@ elif st.session_state.page == "Results":
 
     if chart_data:
         st.bar_chart(chart_data)
-   top_skills = [
+    top_skills = [
     (skill, score)
     for skill, score in ranked
     if score > 0
