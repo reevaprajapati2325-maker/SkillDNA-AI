@@ -783,6 +783,17 @@ h1, h2, h3, h4, h5, h6 {
 .stTextInput label {
     color: #222222 !important;
 }
+
+.stButton > button,
+.stButton > button *,
+[data-testid="stBaseButton-primary"],
+[data-testid="stBaseButton-primary"] *,
+[data-testid="stBaseButton-secondary"],
+[data-testid="stBaseButton-secondary"] *,
+[data-testid="stLinkButton"],
+[data-testid="stLinkButton"] * {
+    color: #FFFFFF !important;
+}
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
 html, body, [class*="css"] {
@@ -1408,56 +1419,56 @@ elif st.session_state.page == "Results":
         st.subheader("📝 Review Your Answers")
         st.write("See what each of your choices indicates about your strengths.")
 
-    # Explanation for each skill
-    explanations = {
-        "Logic": "This choice indicates that you prefer using reasoning, patterns, and clear connections to reach a solution.",
+        # Explanation for each skill
+        explanations = {
+            "Logic": "This choice indicates that you prefer using reasoning, patterns, and clear connections to reach a solution.",
 
-        "Creativity": "This choice indicates that you are comfortable thinking of original ideas and exploring different possibilities.",
+            "Creativity": "This choice indicates that you are comfortable thinking of original ideas and exploring different possibilities.",
 
-        "Scientific Thinking": "This choice indicates that you prefer observing evidence, testing ideas, and understanding how things work.",
+            "Scientific Thinking": "This choice indicates that you prefer observing evidence, testing ideas, and understanding how things work.",
 
-        "Data Analysis": "This choice indicates that you like finding patterns and making conclusions from information or numbers.",
+            "Data Analysis": "This choice indicates that you like finding patterns and making conclusions from information or numbers.",
 
-        "Problem Solving": "This choice indicates that you tend to break challenges into manageable steps and look for practical solutions.",
+            "Problem Solving": "This choice indicates that you tend to break challenges into manageable steps and look for practical solutions.",
 
-        "Communication": "This choice indicates that you value explaining ideas clearly and making sure others understand your point.",
+            "Communication": "This choice indicates that you value explaining ideas clearly and making sure others understand your point.",
 
-        "Leadership": "This choice indicates that you are comfortable taking initiative, coordinating people, and helping a group move forward.",
+            "Leadership": "This choice indicates that you are comfortable taking initiative, coordinating people, and helping a group move forward.",
 
-        "Research": "This choice indicates that you like gathering information and investigating a topic before reaching a conclusion.",
+            "Research": "This choice indicates that you like gathering information and investigating a topic before reaching a conclusion.",
 
-        "Empathy": "This choice indicates that you consider other people's feelings, experiences, and perspectives when making decisions.",
+            "Empathy": "This choice indicates that you consider other people's feelings, experiences, and perspectives when making decisions.",
 
-        "Planning": "This choice indicates that you prefer organising tasks, resources, and steps before taking action.",
+            "Planning": "This choice indicates that you prefer organising tasks, resources, and steps before taking action.",
 
-        "Critical Thinking": "This choice indicates that you prefer checking evidence and evaluating information before accepting a conclusion.",
+            "Critical Thinking": "This choice indicates that you prefer checking evidence and evaluating information before accepting a conclusion.",
 
-        "Systems Thinking": "This choice indicates that you notice how different parts of a situation are connected and affect one another.",
+            "Systems Thinking": "This choice indicates that you notice how different parts of a situation are connected and affect one another.",
 
-        "Decision Making": "This choice indicates that you can compare possibilities and choose an appropriate course of action."
-    }
+            "Decision Making": "This choice indicates that you can compare possibilities and choose an appropriate course of action."
+        }
 
-    for i, answer in st.session_state.answers.items():
-        question = st.session_state.questions[i]
+        for i, answer in st.session_state.answers.items():
+            question = st.session_state.questions[i]
 
-        # Find the skill connected to the selected answer
-        selected_skill = None
+            # Find the skill connected to the selected answer
+            selected_skill = None
 
-        for option_text, skill in question["options"]:
-            if option_text == answer:
-                selected_skill = skill
-                break
+            for option_text, skill in question["options"]:
+                if option_text == answer:
+                    selected_skill = skill
+                    break
 
-        with st.container():
-            st.markdown(
-                f"""
-                <div class="question-card">
-                    <h4>Question {i + 1}</h4>
-                    <p><b>{html.escape(str(question.get("question", question.get("text", "Question"))))}</b></p>
-                    <p><b>Your choice:</b> {html.escape(answer)}</p>
-                    <p><b>Skill indicated:</b> {html.escape(selected_skill or "Not identified")}</p>
-                    <p><b>Why this choice?</b> {html.escape(explanations.get(selected_skill, "This choice contributes to the skill profile shown in your results."))}</p>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+            with st.container():
+                st.markdown(
+                    f"""
+                    <div class="question-card">
+                        <h4>Question {i + 1}</h4>
+                        <p><b>{html.escape(str(question["q"]))}</b></p>
+                        <p><b>Your choice:</b> {html.escape(str(answer))}</p>
+                        <p><b>Skill indicated:</b> {html.escape(str(selected_skill or "Not identified"))}</p>
+                        <p><b>Why this choice?</b> {html.escape(str(explanations.get(selected_skill, "This choice contributes to the skill profile shown in your results.")))}</p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
