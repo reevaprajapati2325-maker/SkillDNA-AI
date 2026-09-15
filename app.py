@@ -794,6 +794,23 @@ h1, h2, h3, h4, h5, h6 {
 [data-testid="stLinkButton"] * {
     color: #FFFFFF !important;
 }
+
+div[data-baseweb="select"] > div {
+    background-color: #333333 !important;
+    border-color: #555555 !important;
+}
+
+div[data-baseweb="select"] span,
+div[data-baseweb="select"] input,
+div[role="listbox"] span,
+div[role="option"] {
+    color: #FFFFFF !important;
+}
+
+div[role="listbox"],
+div[role="option"] {
+    background-color: #333333 !important;
+}
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
 html, body, [class*="css"] {
