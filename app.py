@@ -811,6 +811,15 @@ div[role="listbox"],
 div[role="option"] {
     background-color: #333333 !important;
 }
+
+[data-baseweb="menu"],
+[data-baseweb="menu"] *,
+[data-baseweb="popover"] [role="listbox"],
+[data-baseweb="popover"] [role="listbox"] *,
+[data-baseweb="popover"] [role="option"],
+[data-baseweb="popover"] [role="option"] * {
+    color: #FFFFFF !important;
+}
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
 html, body, [class*="css"] {
